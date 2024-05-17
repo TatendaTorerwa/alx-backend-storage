@@ -1,55 +1,57 @@
-# 0x00. MySQL Advanced
+# MySQL Advanced
 
-## 1. MySQL Cheatsheet
+## Introduction
+This project focuses on advanced MySQL concepts, including creating tables with constraints, optimizing queries, implementing stored procedures, functions, views, and triggers.
 
-Refer to a MySQL cheatsheet for quick reference to commonly used commands and syntax.
+## Concepts Covered
+- Advanced SQL
+  - Creating tables with constraints
+  - Optimizing queries with indexes
+  - Implementing stored procedures, functions, views, and triggers
 
-## 2. MySQL Performance: How To Leverage MySQL Database Indexing
+## Resources
+Read or watch:
+- [MySQL cheatsheet](https://devhints.io/mysql)
+- [MySQL Performance: How To Leverage MySQL Database Indexing](https://www.digitalocean.com/community/tutorials/how-to-leverage-mysql-indexing)
+- [Stored Procedure](https://dev.mysql.com/doc/refman/8.0/en/stored-routines.html)
+- [Triggers](https://dev.mysql.com/doc/refman/8.0/en/triggers.html)
+- [Views](https://dev.mysql.com/doc/refman/8.0/en/views.html)
+- [Functions and Operators](https://dev.mysql.com/doc/refman/8.0/en/functions.html)
+- [Trigger Syntax and Examples](https://dev.mysql.com/doc/refman/8.0/en/trigger-syntax.html)
+- [CREATE TABLE Statement](https://dev.mysql.com/doc/refman/8.0/en/create-table.html)
+- [CREATE PROCEDURE and CREATE FUNCTION Statements](https://dev.mysql.com/doc/refman/8.0/en/create-procedure.html)
+- [CREATE INDEX Statement](https://dev.mysql.com/doc/refman/8.0/en/create-index.html)
+- [CREATE VIEW Statement](https://dev.mysql.com/doc/refman/8.0/en/create-view.html)
 
-Learn how to optimize MySQL performance by leveraging database indexing techniques.
+## Requirements
+- Ubuntu 18.04 LTS
+- MySQL 5.7 (version 5.7.30)
+- All SQL files should end with a new line
+- All SQL queries should have a comment just before
+- All files should start with a comment describing the task
+- All SQL keywords should be in uppercase
+- A README.md file is mandatory at the root of the project folder
 
-## 3. Stored Procedure
+## Setup
+- Use "container-on-demand" to run MySQL
+- Start MySQL in the container using `$ service mysql start`
+- Import a SQL dump using the provided commands
 
-Understand what stored procedures are and how to implement them in MySQL for executing pre-defined SQL statements.
+## Tasks
+- [0. We are all unique!](./0-uniq_users.sql)
+- [1. In and not out](./1-country_users.sql)
+- [2. Best band ever!](./2-fans.sql)
+- [3. Old school band](./3-glam_rock.sql)
+- [4. Buy buy buy](./4-store.sql)
+- [5. Email validation to sent](./5-valid_email.sql)
+- [6. Add bonus](./6-bonus.sql)
+- [7. Average score](./7-average_score.sql)
+- [8. Optimize simple search](./8-index_my_names.sql)
+- [9. Optimize search and score](./9-index_name_score.sql)
+- [10. Safe divide](./10-div.sql)
+- [11. No table for a meeting](./11-need_meeting.sql)
 
-## 4. Triggers
+## Conclusion
+This project provides hands-on experience with advanced MySQL features, enhancing database management skills.
 
-Explore triggers in MySQL and learn how to implement them to automatically perform actions when certain database events occur.
 
-## 5. Views
-
-Learn about views in MySQL and how to implement them to create virtual tables based on the result set of a SELECT query.
-
-## 6. Functions and Operators
-
-Discover various built-in functions and operators in MySQL for performing operations on data.
-
-## 7. Trigger Syntax and Examples
-
-Explore the syntax and examples of triggers in MySQL to understand their implementation in more detail.
-
-## 8. CREATE TABLE Statement
-
-Learn how to create tables with constraints using the CREATE TABLE statement in MySQL.
-
-## 9. CREATE PROCEDURE and CREATE FUNCTION Statements
-
-Understand how to create stored procedures and functions in MySQL using the respective CREATE statements.
-
-## 10. CREATE INDEX Statement
-
-Explore how to optimize queries by adding indexes using the CREATE INDEX statement in MySQL.
-
-## 11. CREATE VIEW Statement
-
-Learn how to create views in MySQL using the CREATE VIEW statement for virtual table creation.
-
-## Learning Objectives
-
-By the end of this project, you will:
-
-- Understand how to create tables with constraints in MySQL.
-- Know how to optimize queries by adding indexes in MySQL.
-- Be proficient in implementing stored procedures and functions in MySQL.
-- Understand the concept of views and how to implement them in MySQL.
-- Understand the implementation of triggers and how to use them in MySQL.
