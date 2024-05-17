@@ -54,4 +54,52 @@ Read or watch:
 ## Conclusion
 This project provides hands-on experience with advanced MySQL features, enhancing database management skills.
 
+## MySQL Usage Guide
+
+### Comments for your SQL file
+```bash
+$ cat my_script.sql
+-- 3 first students in the Batch ID=3
+-- because Batch 3 is the best!
+SELECT id, name FROM students WHERE batch_id = 3 ORDER BY created_at DESC LIMIT 3;
+
+##Running MySQL in a Container-on-Demand
+###To run MySQL in a container-on-demand, follow these steps:
+
+1. Ask for a container with Ubuntu 18.04 and Python 3.7.
+2. Connect to the container via SSH or WebTerminal.
+3. Start MySQL in the container before interacting with it:
+
+$ service mysql start
+ * MySQL Community Server 5.7.30 is started
+
+##MySQL is started, you can list databases using the following command:
+
+$ cat 0-list_databases.sql | mysql -uroot -p my_database
+Enter password: 
+
+4. This will display the list of databases available in MySQL.
+
+In the container, the default credentials are root for both the username and password.
+
+##Importing a SQL Dump
+
+###To import a SQL dump into MySQL, follow these steps:
+
+1. Create a new database using the following command:
+
+$ echo "CREATE DATABASE hbtn_0d_tvshows;" | mysql -uroot -p
+Enter password: 
+
+2. Download the SQL dump file using curl and import it into the newly created database:
+
+$ curl "https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/hbtn_0d_tvshows.sql" -s | mysql -uroot -p hbtn_0d_tvshows
+Enter password: 
+
+3. Verify the import by executing a query on the imported data, for example:
+
+$ echo "SELECT * FROM tv_genres" | mysql -uroot -p hbtn_0d_tvshows
+Enter password: 
+
+This will display the contents of the tv_genres table.
 
