@@ -43,6 +43,68 @@ To successfully complete this project, it is recommended to read or watch the fo
 - Handle potential issues like missing data directories or init.d files
 - Utilize container-on-demand for running MongoDB if required
 
+## More Info
+
+### Install MongoDB 4.2 in Ubuntu 18.04
+
+Follow the official installation guide:
+
+```bash
+$ wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | apt-key add -
+$ echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" > /etc/apt/sources.list.d/mongodb-org-4.2.list
+$ sudo apt-get update
+$ sudo apt-get install -y mongodb-org
+
+##Check MongoDB status:
+
+$ sudo service mongod status
+mongod start/running, process 3627
+$ mongo --version
+MongoDB shell version v4.2.8
+git version: 43d25964249164d76d5e04dd6cf38f6111e21f5f
+OpenSSL version: OpenSSL 1.1.1  11 Sep 2018
+allocator: tcmalloc
+modules: none
+build environment:
+    distmod: ubuntu1804
+    distarch: x86_64
+    target_arch: x86_64
+
+##Install pymongo:
+
+$ pip3 install pymongo
+
+##Verify pymongo installation:
+
+$ python3
+>>> import pymongo
+>>> pymongo.__version__
+'3.10.1'
+
+##Potential issue resolution:
+
+$ sudo mkdir -p /data/db
+Or if /etc/init.d/mongod is missing, please find an example of the file in this repository.
+[Click to expand/hide file contents]
+
+##In the container, start MongoDB before using it:
+
+$ service mongod start
+* Starting database mongod                                              [ OK ]
+
+##List databases:
+
+$ cat 0-list_databases | mongo
+MongoDB shell version v4.2.8
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("70f14b38-6d0b-48e1-a9a4-0534bcf15301") }
+MongoDB server version: 4.2.8
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+bye
+
+
 ## Tasks
 The project consists of several tasks covering different aspects of MongoDB usage and Python scripting. Each task has specific requirements and involves writing Python scripts to perform various operations on MongoDB collections.
 
